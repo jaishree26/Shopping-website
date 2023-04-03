@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FLIPKART PROJECT</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sono:wght@600&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+	header{
+		background-color: deepskyblue;
+	}
+
+	nav{
+		display: flex;
+	}
+	.logo{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.logo1{
+		padding: 10px;
+		width: 150px;
+		height: 25px;
+	}
+
+	nav ul
+	{
+		height: 7vh;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	nav ul li{
+		list-style: none;
+		padding: 0 23px;
+	}
+
+	nav ul li a{
+		text-decoration: none;
+		color: white;
+	}
+
+	nav ul li a:hover{
+		font-weight: bolder;
+	}
+
+	.container{
+		min-height: calc(100vh - 7vh - 5vh );
+	}
+
+	.search{
+		display: flex;
+		align-items: center;
+		color: white;
+	}
+	.search input{
+		width: 300px;
+		height: 20px;
+		border-radius: 5px;
+		margin: 0px 10px 0px 110px;
+		padding: 0px 10px;
+	}
+
+	.slider{ 
+	    width: 80vw;
+	    margin: 12px auto;
+	    overflow: hidden;
+
+	}
+
+	.card{
+		max-width: 92vw;
+		margin: 37px auto;
+		background-color: white;
+
+	}
+
+	.cards{
+	display: flex;
+		overflow: hidden;
+	}
+
+	.card-item{ 
+
+	   display: inline-flex;
+	   justify-content: center;
+	   flex-direction: column;
+	   margin: 0 20px;
+	}
+
+	.container{
+		min-height: calc(100vh - 7vh - 5vh );
+		background-color: #E3DDDD;
+	}
+
+
+	footer{
+
+		font-family: 'Sono', sans-serif;
+		background-color:grey ;
+		height: 5vh;
+	}
+    .copyright{
+		display: grid;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.btn{
+		padding: 0px 10px;
+		background-color: deepskyblue;
+		color: white;
+		border-color: white;
+		border-style: double;
+		border-radius: 5px;
+		cursor: pointer;
+		
+	}
+
+	.btn:hover
+	{
+		font-weight: bolder;
+	}
+
+	.my-1{
+		margin: 3px;
+	}
+
+	.my-2{
+		margin: 26px 20px;
+	}
+
+	.text-center
+	{
+		text-align: center;
+	}
+
+</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo">
+				<img class="logo1" src="data:image/jpeg;base64,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">
+			</div>
+
+			<ul>	
+				<li><a href="home.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="contact.html">CONTACT</a></li>
+			</ul>
+
+			<div class="search">
+
+				<input type="text" name="search" placeholder="Search Here"> 
+
+				<button class="btn">Search</button>
+			</div>
+		</nav>
+	</header>
+
+	<main >
+		<div class="container">
+			<div class="slider">
+				 <img src="https://source.unsplash.com/1600x500/?shopping,ecommerce" alt="">
+			</div>
+
+			<div class="cards">
+
+				<div class="card">
+					<h2 class="my-2">Join Cricket Fun</h2>
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?cricket,keeping" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Cricket Bats</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Cricket Bats</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?cricket,helmet" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Cricket Bats</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?cricket,keeping" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Cricket Bats</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?cricket,bat" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Cricket Bats</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?cricket,uniform" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Cricket Bats</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+				</div>
+					
+			</div>
+
+
+			<div class="cards">
+
+				<div class="card">
+
+					<h2 class="my-2">Join Cricket Fun</h2>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?clothes,shirt" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Daily wears</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?trouser" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Pants</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?cap" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Cap</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?shoes" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Shoes</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?jwellery" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Jwellery</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+					<div class="card-item">
+						<img src="https://source.unsplash.com/160x160/?garments" alt="">
+
+						<div class="lines">
+							<p class="text-center my-1">Garments</p>
+							<p class="text-center my-1">Minimum 20% Off</p>
+							<p class="text-center my-1">grab Now</p>
+						</div>
+
+					</div>
+
+
+
+					
+
+
+				</div>
+					
+				
+			</div>
+		</div>
+	</main>
+
+	<footer class="copyright">
+		<p >Copyright&copy;MyCart.com</p>
+	</footer>
+</body>
+</html>
